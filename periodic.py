@@ -13,6 +13,18 @@ def see_you(test):
 #         "schedule": 10.0
 #     }
 # }
+#OR
+# Schedule tasks.
+#app_celery.conf.beat_schedule = {
+#    'load_ticket_data-every-day': {
+#        'task': 'tasks.load_ticket_data',
+#        # 'schedule': crontab(minute=3, hour=18), # run every day on 6 AM.
+#        # 'schedule': crontab(minute=1),
+#        'schedule': 50.0,
+#        'args': [".", "fuzzy_test.xlsx", "EDLT", "fuzzy_test.xlsx", "true"]
+#    }
+#}
+
 print("****", config)
 app.conf.beat_schedule = config
 
